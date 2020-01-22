@@ -10,6 +10,8 @@ Source Code -lexer-> Tokens --> abstract syntax tree
         input data(frequently text) --> a data structure -often some kind of parse tree, AST
     2. AST abstract syntax tree
     3. parsing a programming language 
+
+
        1. top-down parsing
           1. recursive descent parsing
           2. Early parsing
