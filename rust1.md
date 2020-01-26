@@ -204,6 +204,103 @@
         println!("{}",*counter.lock().unwrap());
     }
     ```
+  - 线程池
+    ```rust
+        use std::sync::mpsc;
+        use std::sync::Arc;
+        use std::sync::Mutex;
+        use std::thread;
+
+        const MIN_WORKERS: usize = 100;
+        const MAX_WORKERS: usize = 1 << 16 - 1;
+
+        macro_rules! set_workers {
+            ($num:expr) => {
+                match $num {
+                    MIN_WORKERS ..= MAX_WORKERS => $num,
+                    _=> MIN_WORKERS,
+                }
+            };
+        }
+
+        enum Message {
+            NewJob(Job),
+            Terminate,
+        }
+
+        pub struct ThreadPool {
+            workers: Vec<Worker>,
+            sender: mpsc::Sender<Message>,
+        }
+
+        type Job = Box<dyn FnOnce() + Send + 'static>;
+
+        impl ThreadPool {
+            pub fn new(cap: usize) -> ThreadPool {
+                let size = set_workers!(cap);
+                let (sender, receiver) = mpsc::channel();
+
+                let receiver = Arc::new(Mutex::new(receiver));
+                let mut workers = Vec::with_capacity(size);
+
+                for id in 0..size {
+                    workers.push(Worker::new(id, Arc::clone(&receiver))); //接收者的副本...
+                }
+                ThreadPool { workers, sender }
+            }
+            pub fn execute<F>(&self, f: F)
+            where
+                F: FnOnce() + Send + 'static,
+            {
+                let job = Box::new(f);
+                self.sender.send(Message::NewJob(job)).unwrap();
+            }
+        }
+        impl Drop for ThreadPool {
+            fn drop(&mut self) {
+                for _ in &mut self.workers {
+                    self.sender.send(Message::Terminate).unwrap(); //逐一发送停止消息
+                }
+
+                for worker in &mut self.workers {
+                    println!("shutdown worker{}", worker.id);
+                    if let Some(thread) = worker.thread.take() {
+                        thread.join().unwrap(); //等待结束
+                    }
+                }
+            }
+        }
+
+        struct Worker {
+            id: usize,
+            thread: Option<thread::JoinHandle<()>>,
+        }
+
+        impl Worker {
+            fn new(id: usize, receiver: Arc<Mutex<mpsc::Receiver<Message>>>) -> Worker {
+                let thread = thread::spawn(move || loop { //无限循环
+                    let message = receiver.lock().unwrap().recv().unwrap();
+
+                    match message {
+                        Message::NewJob(job) => {
+                            println!("Workers id {} got a job running", id);
+                            job();
+                        }
+                        Message::Terminate => {
+                            println!("Workers {}  was told  to terminate", id);
+                            break;//结束信号
+                        }
+                    }
+                });
+
+                Worker {
+                    id,
+                    thread: Some(thread),
+                }
+            }
+        }
+    ```
+
 - 属性
   - cfg
     ```rust
