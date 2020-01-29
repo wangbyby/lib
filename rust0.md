@@ -47,7 +47,7 @@ wby的study rust
             }
             }
         }
-    //后序遍历+计算
+    //后序遍历+计算...
     pub fn judge(&mut self) -> Option<Num>{
         match self.key {
             Gkey::op(c) => {
@@ -75,7 +75,6 @@ wby的study rust
         for _j in 0..20 {
             let tmp:i8 = rag.gen(); //产生随机数
             a[_j] = tmp;
-            
         }
         for i in &a{
             println!("{}",i);

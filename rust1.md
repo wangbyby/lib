@@ -70,6 +70,8 @@
     ```
 - match用法
   - @与 a..=b 的用法
+
+    a..=b 表示范围 a<= , <=b
     ```rust
     fn main(){
         enum Message {
@@ -92,8 +94,22 @@
         }
     }
     ```
+ - 解构结构体
+ - 现在还不能匹配表达式, 2020-1-28
+ - 
 
+- char,String,&str 
+    ```rust
+    "\r\t\n let ax = helo; ".split_ascii_whitespace();
+    let str0  = "hello".to_string();//&str --> String
+    let str1 = 'a'.to_string(); // char --> String
+    let c : char = 0 as char; //0作为char
+    self.ch = self.input.chars().nth(self.read_position).unwrap_or(CHAR0);//得到String的第n个char
+        
+    
+    ```
 
+   
 - Cow 写时复制
     ```rust
     //copy on write
@@ -318,10 +334,11 @@
     ```
 
   - 测试
-        - cargo test -- --nocapture
-        - 单元测试
-          ```
-          #[cfg(test)] //只在cargo test中生效, 不编译在cargo build中
-          ```
+      - cargo test -- --nocapture
+      - 单元测试
+        ```
+        #[cfg(test)] //只在cargo test中生效, 不编译在cargo build中
+        ```
+        
         
 
