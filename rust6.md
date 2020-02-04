@@ -1,0 +1,52 @@
+##rust宏
+
+```rust
+    macro_rules! impl_layoutable {
+        ($e: ty) => {
+            impl Layoutable for $e {
+                fn position(&self) -> (f32,f32) { self.pos }
+                fn size(&self) -> (f32,f32) { self.size }
+                fn set_position(&mut self, x: f32, y: f32) { self.pos = (x, y); }
+                fn set_size(&mut self, width: f32, height: f32) { self.size = (width, height); }
+            }
+        };
+    }
+    // ...
+    impl_layoutable!(Widget);
+
+    // ...
+    impl_layoutable!(MarginWidget);
+```
+
+- 大佬写的代码
+
+    ```rust
+        macro_rules! do_lalr_parsing {
+    ($input: expr, $pat: ident, $tok: ident) => {{
+        let lxr = lexer::make_tokenizer($input);
+        let marker_token = (Default::default(), token::Tok::$tok, Default::default());
+        let tokenizer = iter::once(Ok(marker_token)).chain(lxr);
+
+        match python::TopParser::new().parse(tokenizer) {
+            Err(err) => Err(ParseError::from(err)),
+            Ok(top) => {
+                if let ast::Top::$pat(x) = top {
+                    Ok(x)
+                } else {
+                    unreachable!()
+                }
+            }
+        }
+    }};
+    }
+
+        /// Parse a full python program, containing usually multiple lines.
+        pub fn parse_program(source: &str) -> Result<ast::Program, ParseError> {
+            do_lalr_parsing!(source, Program, StartProgram)
+        }
+
+        /// Parse a single statement.
+        pub fn parse_statement(source: &str) -> Result<Vec<ast::Statement>, ParseError> {
+            do_lalr_parsing!(source, Statement, StartStatement)
+        }
+    ```

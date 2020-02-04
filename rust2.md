@@ -1,153 +1,82 @@
-- DSL (领域专用语言)
-    1. 单个参数
+##不要妄想用dyn trait来模拟类...
+
+##引用, 生命周期
+    - 生命周期检查器
     ```rust
-    macro_rules! compute {
-        (eval $e:expr) => {
-            let val: isize = $e;
-            println!("{} = {}",stringify!($e),val);
-        };
-    }
-    fn main() {
-        compute!{
-            eval 1+2
-        }
-        compute!{
-            eval (2+2)*(1-2)/3
-        }
-    }
-    ```
-    2. 多个参数
-    ```rust
-    macro_rules! compute {
-        //单个参数
-        (eval $e:expr) => {
-            let val: isize = $e;
-            println!("{} = {}",stringify!($e),val);
-        };
-        //多个
-        (eval $e:expr, $(eval $es:expr),+) => {
-            compute!{eval $e}
-            compute!{ $(eval $es),+}
-        };
-    }
-    fn main() {
         
-        compute!{
-            eval 1+2,
-            eval 3+4 //不加逗号
-        }
+        fn main() {
 
-        compute!{
-            eval (2+2)*(1-2)/3
+            let s1 = String::from("hello");
+            let s2 = "world";
+            let c = longest(&s1, s2);
         }
-    }
+        fn longest<'c>(a: &'c str, b: &'c str) -> &'c str{
+            if a.len() > b.len() {
+                return  a;
+            }
+            b
+        }
     ```
-- 全局静态变量-lazy_static!
+    - mut与&mut
+    好奇怪的用法, mut与&mut
+
     ```rust
-    #[macro_use]
-    extern crate lazy_static;
+        pub fn eval(node:& Box<ast::ASTNode>, mut env:&mut  Environment) ->Box<object::TheObject>
+    ```
+  - 'static 静态变量
 
-    use std::collections::HashMap;
+##rust类型系统
 
-    lazy_static! {
-        static ref VEC:Vec<u8> = vec![0x18u8, 0x11u8];
-        static ref MAP: HashMap<u32, String> = {
-            let mut map = HashMap::new();
-            map.insert(18, "hury".to_owned());
-            map
-        };
-        static ref PAGE:u32 = mulit(18);
+  - trait的面向对象特征
+    ```rust
+    trait Car{
+    fn approve(self: Box<Self>) -> Box<dyn Car>;
     }
-
-    fn mulit(i: u32) -> u32 {
-        i * 2
+    #[derive(Debug)]
+    struct Tsl{}
+    impl Car for Tsl {
+        //注意 dyn关键字
+        fn approve(self: Box<Self>) -> Box<dyn Car>{
+            self
+        }
     }
-
     fn main() {
-        println!("{:?}", *PAGE);
-        println!("{:?}", *VEC);
-        println!("{:?}", *MAP);
+        let a = Box::new(Tsl{});
+        let res = a.approve();
     }
     ```
-- 标准输入输出
-```rust
-      
-    use std::io;
-    use std::io::prelude::*;// use std::io::Write;
-    const PROMPT : &'static str= ">> ";
+  - trait的默认行为
+    ```rust
+    trait Car{
+        //默认行为定义
+        fn run(&self) -> String {
+            String::from("i am running")
+        }
+    }
+
+    #[derive(Debug)]
+    struct Tsl{}
+
+    impl Car for Tsl {
+        fn run(&self) -> String {
+            String::from("特斯拉在跑")
+        }
+    }
+
+    struct Wl{}
+    //使用默认行为
+    impl Car for Wl{}
+
     fn main() {
-        
-        //读
-        let mut input = String::new();
-        io::stdin().read_line(&mut input).unwrap();
+        let tsl = Box::new(Tsl{});
+        let s = tsl.run();
+        println!("{:?}", s);
 
-        let mut buff = [0;512];
-        io::stdin().read(&mut buff).unwrap();
-
-        //写
-        io::stdout().write(&input).unwrap();
-        io::stdout().write(b"Hello Monkey\n");
-        io::stdout().flush().unwrap(); //注意flush
-    
-        io::stdout().write(PROMPT.as_bytes());
-        io::stdout().flush().unwrap();
+        let wl = Box::new(Wl{});
+        let wres = wl.run();
+        println!("{:?}", wres);
     }
-    
-```
-- 读写文件
-
-    1. 读文件
-
-```rust
-    use std::error::Error;
-    use std::fs::File;
-    use std::io::prelude::*;
-    use std::path::Path;
-    use std::io;
-    fn main() {
-        
-        let path = Path::new("hello.txt");
-        let display = path.display();
-        //打开文件只读模式
-        let mut file = match File::open(&path) {
-            Err(why) => panic!("can't open {} : {}",display, Error::description(&why)),
-            Ok(file) => file,
-        };
-        let mut string = String::new();
-        match file.read_to_string(&mut string){
-            Err(why) => panic!("can't open {} : {}",display, Error::description(&why)),
-            Ok(_) => println!("{} has {}",display, string),
-        }
-    }
-```
-    2. 写文件
-```rust
-    use std::error::Error;
-    use std::fs::File;
-    use std::io::prelude::*;
-    use std::path::Path;
-    use std::io;
-    fn main() {
-        
-        let path = Path::new("hello.txt");
-        let display = path.display();
-        //只写模式
-        let mut file = match File::create(&path) {
-            Err(why) => panic!("can't create {} : {}",display, Error::description(&why)),
-            Ok(file) => file,
-        };
-        let mut string = String::new();
-        string.push_str("string: &str");
-    
-        match file.write_all(string.as_bytes()){
-            Err(why) => panic!("can't open {} : {}",display, Error::description(&why)),
-            Ok(_) => println!("{} has {}",display, string),
-        }
-    }
-
-```
-
-- rust类型系统
+    ```
     - 关联类型
     ```rust
     //trait的定义
@@ -178,8 +107,37 @@
         }
     }
     ```
- - trait --> 具体类型
+ - trait与struct
+    - 参数传递
+    ```rust
+    trait Ani{
+    fn hello(&self){}
+    }
 
+    struct Cat{}
+
+    impl Ani for Cat{
+        fn hello(&self){
+            println!("i am a cat!");
+        }
+    }
+
+    fn say_hello(a:Box<dyn Ani>){
+        a.hello();
+    }
+    fn new() ->Box<dyn Ani>{
+        new_cat()
+    }
+
+    //加了Option就不行
+    fn new_cat()->Box<Cat>{
+        Box::new(Cat{})
+    }
+    fn main() {
+        say_hello(new());
+        
+    }
+    ```
     - 类似go的接口断言
     ```rust
     let tests = vec![
@@ -192,7 +150,7 @@
     for (i,v)  in tests.iter().enumerate() {
         let tmp:& Box<dyn ast::Node> = &program.statements[i];
         
-        let b: &ast::LetStatement = match tmp.as_any().downcast_ref::<ast::LetStatement>() {
+        let b: &ast::LetStatement = match tmp.as_any().downcast_ref::<ast::LetStatement>() {//类似接口断言...
             Some(b) =>b,
             None =>panic!("&Node is not a let statement"),
         };
@@ -208,41 +166,125 @@
     }
     
     impl  Node for Program {
-    fn token_literal(&self) ->String {
-        if self.statements.len()>0 {
-            return self.statements[0].token_literal();
+        fn token_literal(&self) ->String {
+            if self.statements.len()>0 {
+                return self.statements[0].token_literal();
+            }
+            "".to_string()
         }
-        "".to_string()
-    }
-    fn as_any(&self)->&dyn Any{
-        self
-    }
-}
-    ```
-
-
-
-    ```rust
-    use std::any::Any;
-    trait A {
-        fn as_any(&self) -> &dyn Any;
-    }
-    
-    struct B;
-    impl A for B {
-        fn as_any(&self) -> &dyn Any {
+        fn as_any(&self)->&dyn Any{
             self
         }
     }
-    fn main() {
-        let a: Box<dyn A> = Box::new(B);
-        // The indirection through `as_any` is because using `downcast_ref`
-        // on `Box<A>` *directly* only lets us downcast back to `&A` again.
-        // The method ensures we get an `Any` vtable that lets us downcast
-        // back to the original, concrete type.
-        let b: &B = match a.as_any().downcast_ref::<B>() {
-            Some(b) => b,
-            None => panic!("&a isn't a B!"),
-        };
+    /*
+    if let Some(ref value) = node.as_any().downcast_ref::<ast::Program>(){
+    }else if let Some(ref value)=node.as_any().downcast_ref::<ast::ExpressionStatement>(){
+        if let Some(expr) = value.expression{
+            return Eval(expr);
+        }
+    }else if let Some(ref value) = node.as_any().downcast_ref::<ast::IntegerLiteral>(){
+    }
+    */
+    ```
+    - class subtyping in rust
+
+    ```rust
+    //如果有struct的话, 这个就难办了...
+    trait Base : AsBase {
+        ...
+    }
+
+    trait AsBase {
+        fn as_base(&self) -> &Base;
+    }
+
+    impl<T: Base> AsBase for T {
+        fn as_base(&self) -> &Base { self }
     }
     ```
+
+  - Any的使用
+    ```rust
+        use std::any::Any;
+        trait A {
+            fn as_any(&self) -> &dyn Any;
+        }
+        
+        struct B;
+        impl A for B {
+            fn as_any(&self) -> &dyn Any {
+                self
+            }
+        }
+        fn main() {
+            let a: Box<dyn A> = Box::new(B);
+            // The indirection through `as_any` is because using `downcast_ref`
+            // on `Box<A>` *directly* only lets us downcast back to `&A` again.
+            // The method ensures we get an `Any` vtable that lets us downcast
+            // back to the original, concrete type.
+            let b: &B = match a.as_any().downcast_ref::<B>() {
+                Some(b) => b,
+                None => panic!("&a isn't a B!"),
+            };
+        }
+    ```
+
+##残废的代码
+
+    ```rust
+        if let Some(value) = node.as_any().downcast_ref::<ast::Program>() {
+            return eval_statements(&value.statements);
+        }else if let Some(ref value) = node.as_any().downcast_ref::<ast::ExpressionStatement>(){
+            return __eval(&value.expression);
+        }else if let Some(ref value) = node.as_any().downcast_ref::<ast::IntegerLiteral>(){
+            return Some(Box::new(object::Integer{value: value.value})); 
+        }else if let Some(ref value) = node.as_any().downcast_ref::<ast::Boolean>(){
+            return Some(nativebool_boolobj(value.value));
+        }else if let Some(ref value) = node.as_any().downcast_ref::<ast::PrefixExpression>(){
+            return eval_prefix_expr(&value.operator, &__eval(&value.right));
+        }else if let Some(ref value) = node.as_any().downcast_ref::<ast::InfixExpression>(){
+            return eval_infix_expr(&value.operator, &__eval(&value.left),&__eval(&value.right));
+        }else if let Some(ref value) = node.as_any().downcast_ref::<ast::BlockStatement>(){
+            return eval_statements(&value.statements);
+        }else if let Some(ref value) = node.as_any().downcast_ref::<ast::IfExpression>(){
+            return eval_ifexpression(value);
+        }
+    ```
+
+##char,String,&str 
+  - 转换
+    ```rust
+        "\r\t\n let ax = helo; ".split_ascii_whitespace();
+        let str0  = "hello".to_string();//&str --> String
+        let str1 = 'a'.to_string(); // char --> String
+        let c : char = 0 as char; //0作为char
+        self.ch = self.input.chars().nth(self.read_position).unwrap_or(CHAR0);//得到String的第n个char
+        
+    
+    ``` 
+  - Cow 写时复制
+    ```rust
+    //copy on write
+    use std::borrow::Cow;
+    fn cow_test<'a> (input :&'a str) -> Cow<'a,str>{
+        if input.contains(' ') {
+            let mut buf  = String::with_capacity(input.len());
+            for i in input.chars() { //这里String是没有 buf[0](按下标取值)操作的
+                if i != ' ' {
+                    buf.push(i);
+                }
+            }
+            return Cow::Owned(buf);
+        }
+        Cow::Borrowed(input)
+    }   
+    ```
+  - From,Into泛型的使用
+    ```rust
+        fn read_str<S: Into<String>>(s: S){
+            s.into() //转换为String
+        }
+    ```
+
+
+
