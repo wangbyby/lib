@@ -176,15 +176,7 @@
             self
         }
     }
-    /*
-    if let Some(ref value) = node.as_any().downcast_ref::<ast::Program>(){
-    }else if let Some(ref value)=node.as_any().downcast_ref::<ast::ExpressionStatement>(){
-        if let Some(expr) = value.expression{
-            return Eval(expr);
-        }
-    }else if let Some(ref value) = node.as_any().downcast_ref::<ast::IntegerLiteral>(){
-    }
-    */
+    
     ```
     - class subtyping in rust
 

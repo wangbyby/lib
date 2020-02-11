@@ -1,4 +1,4 @@
-##match用法
+## match用法
   - @与 a..=b 的用法
     a..=b 表示范围 a<= , <=b
     ```rust
@@ -41,8 +41,7 @@
     ```
      - 现在还不能匹配表达式, 2020-1-28
 
-##枚举
-    ###枚举
+## 枚举
     ```rust
     #[derive(Debug)]
     enum Operation {
@@ -121,4 +120,17 @@
         }
     }
     ```
-    
+    ```rust
+        #[derive(Debug)]
+        enum  Expr{
+            A,
+            B,
+            C,
+            D,
+        }
+        fn main() {
+            let expr = Expr::B as i32;
+            println!("{:?}",expr);
+
+        }
+    ```
