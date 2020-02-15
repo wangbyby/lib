@@ -1,0 +1,17 @@
+﻿Dijkstra(G,w,r) //w为边权重函数, r为起始点
+	for vv in G.v
+		vv.pre = -1 //前驱
+		vv.d = max //无穷大
+	S = nil //目标点集
+	Q = G.V //初始点集
+	while Q != nil
+		u = Q.min()
+		S = S  + {u}
+		for v in G.adj[u]
+			Relax(u,v,w)
+
+
+Relax(u,v,w)
+	if v.d > u.d + w(u,v)
+		v.d = u.d + w(u,v)
+		v.pre = u

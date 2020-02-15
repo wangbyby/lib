@@ -1,0 +1,41 @@
+
+// max heap
+/*
+	A[0...n-1]
+
+*/
+//下移
+Down(A,i,size)
+	l = leftchild(i) // 2i+1
+	r = rightchild(i) // 2i+2
+	max = i
+	if l < size && A[l]>A[i]
+		max = l
+	if r < size && A[r]> A[max]
+		max = r
+	if max != i
+		exch A[i],A[max]
+		Down(A,max,size)
+
+//上移
+Up(A,i)
+	p = parent(i) //( i-1)/2
+	if 0<=p && A[p] < A[i]
+		max = i
+	else 
+		max = p
+	if max != p
+		exch A[i], A[max]
+		Up(A,max) 
+
+//建最大堆
+BuildHeap(A,size)
+	for i = size/2 ; i>=0;i-- 
+		Down(A,i,size)
+
+//最大堆排序
+HeapSort(A,size)
+	BuildHeap(A,size)
+	for i = size -1 ; i>0;i--
+		exch A[0], A[i]
+		Down(A,0,i)

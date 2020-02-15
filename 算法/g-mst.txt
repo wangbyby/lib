@@ -1,0 +1,28 @@
+﻿//最小生成树
+
+prim(G,w,r)
+	for u in G.v
+		u.key = max
+		u.pre = nil
+
+	r.key = 0
+	Q = G.V
+	while Q != nil 
+		u = ExtMin(Q)
+		for v in G.adj[u]
+			if v in Q && w(u,v) < v.key
+				v.pre = u
+				v.key = w(u,v)
+
+
+kruskal(G,w)
+	A = nil //目标集合
+	sort Edges by weight
+	
+	vs // visited set
+	for (u,v) in G.E.sort()
+		if vs[v] == 0 //没有访问过
+			A = A + {(u,v)}
+			vs[v] = 1, vs[u] = 1
+	return A
+			

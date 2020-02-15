@@ -1,0 +1,29 @@
+
+//数组 A[0...n-1]
+
+MergeSort(A,l,r)
+	if l < r
+		m = (l+r)/2
+		MergeSort(A,l,m)
+		MergeSort(A,m+1,r)
+		Merge(A,l,m,r)
+
+Merge(A,l,m,r)
+	n1 = m-l+1
+	n2 = r-m
+	
+	//L左
+	//R右
+	for i=0 ; i<n1;i++
+		L[i] = A[l+i]
+	for i=0 ; i<n2;i++
+		R[i] = A[m+i+1]
+	L[n1] = max
+	R[n2] = max
+	for i=0,j=0,k=p; k<=r ;k++
+		if L[i] <= R[j]
+			A[k] = L[i]
+			i++
+		else
+			A[k] = R[j]
+			j++

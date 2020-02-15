@@ -1,0 +1,12 @@
+
+Bellmanford(G,w,s)
+	init(G,s)
+
+	for i =1 to |G.V| -1
+		for (u,v) in G.E
+			Relax(u,v,w)
+
+	for (u,v) in G.E
+		if v.d > u.d + w(u,v)
+			return flase
+	return true

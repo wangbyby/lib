@@ -1,0 +1,21 @@
+
+//Deep First Search
+ved // 记录已经遍历过点 1为遍历过 0为没有遍历
+DFS(g,s)
+	//s为起始点
+	ved[s] = 1
+	for v in adj(s)
+		if ved[v] ==0 
+			DFS(g,v)
+
+//Brand First Search
+BFS(g,s)
+	ved[s] = 1
+ 	q = Queue //队列
+	q.push(s)
+	while q != nil // 不为空集 
+		e = q.pop()
+		for v in adj(e)
+			ved[e] = 1
+			q.push(v)
+	
