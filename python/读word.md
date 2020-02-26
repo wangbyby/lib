@@ -4,9 +4,6 @@
 pip install python-docx
 ```
 2. 
-docx.opc.exceptions.PackageNotFoundError: Package not found at 'C:\Users\13298\Desktop\structure\2020年会怎么样.doc'
-
-doc转为docx文件即可
 
 3. doc转为docx文件
 ```python
