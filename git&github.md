@@ -168,7 +168,7 @@ git github
             1.git fetch 别名 远程分支名
             2.git merge origin/master
     解决冲突
-        要点  1.不是github远程库最新版, 不能推送, 必先拉取
+        要点    1.不是github远程库最新版, 不能推送, 必先拉取
                 2.按"分支冲突解决" 操作解决即可
     跨团队协作
         fork 本地修改,推送到远程库
