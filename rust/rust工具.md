@@ -1,4 +1,4 @@
-##rust工具
+## rust工具
   - rustfmt
     ```bash
         #安装rustfmt
@@ -18,7 +18,7 @@
         cargo clippy
     ```
 
-##属性
+## 属性
   - cfg
     ```rust
     #[cfg(target_os = "linux")]
@@ -42,7 +42,7 @@
         ```
         
         
-##第三方包
+## 第三方包
 - 全局静态变量-lazy_static!
     ```rust
     #[macro_use]
