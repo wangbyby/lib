@@ -204,3 +204,5 @@ var fastestCar = compose( _.sortBy(function(car){ return car.horsepower }), _.la
 
 # 例子
 
+# 类型 Hindley-Milner
+Hoogle 这样的类型签名搜索引擎去搜索我们想要的函数。类型签名所能包含的信息量真的非常大。
