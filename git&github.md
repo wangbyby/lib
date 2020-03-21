@@ -6,6 +6,12 @@
 4. git push <branch>
 5. 若有错误则 git push --set-upstream origin master 即把本地分支关联到远程主分支
 
+# 设置ssh
+```bash
+# 1.生成ssh
+ssh-keygen -t rsa -C "1329859973@qq.com"
+
+```
 
 # git使用笔记
 git github
