@@ -34,6 +34,9 @@
 - 函数式：$$f(x)=\frac{P(x)}{Q(x)}$$
 - 下划线
 $\_$
+- 箭头
+  - $\Leftrightarrow$:
+  - $X\stackrel{F}{\longrightarrow}Y$
 
 
 
@@ -105,4 +108,7 @@ graph LR
 ```
 
 - 插入图片
+  - 本地: ![avatar](/home/picture/1.png) 
+  - 网络: ![avatar](http://baidu.com/pic/doge.png)
+  - ![avatar][base64str] [base64str]:data:image/png;base64,iVBORw0......
 <img src="./aaa.png" >函数调用关系 </img>
