@@ -1,9 +1,11 @@
-# cargo配置文件如下
+# cargo配置文件如下 
 ```bash
-[source.crates-io]
-replace-with = "rustcc"
 
-[source.rustcc]
-registry = "https://code.aliyun.com/rustcc/crates.io-index.git"
+[source.crates-io]
+replace-with = 'tuna'
+
+[source.tuna]
+registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
 
 ```
+清华nb
