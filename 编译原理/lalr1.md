@@ -1,4 +1,7 @@
+
 # 前情提要
+
+``SLR(1)的FOLLOW集过于宽泛, 在不同境况下, 归约需要的是后面直接跟的,而不是所有的FOLLOW集, 即对与归约来说, FOLLOW集过于宽泛, 包含了不必要的信息``
 
 - $A代表非终结符$
 - $a代表变量$
@@ -66,6 +69,16 @@
      - if $[A\rightarrow \alpha.] \in I_i$, 则**for $a \in T$**, 令Action[i,a]=r$A\rightarrow \alpha.$
      - if $GOTO(I_i,A)=I_j$, 令GOTO[i,A]=j
 
+# SLR(1)
+
+
+- SLR(1)分析表的构建
+  - 构造文法G'的项目集规范族$C = \lbrace I_0,I_1,I_2..., I_n\rbrace$
+     - if $[A\rightarrow \alpha .a \beta] \in I_i$并且 $GOTO(i,a)=j$, 则Action[i,a]=``sj``
+     - if $[S\rightarrow S'.] \in I_i$, 则Action[i,``#``]=Acc
+     - if $[A\rightarrow \alpha.] \in I_i$, 则**for $a \in Follow(A)$**, 令Action[i,a]=r$A\rightarrow \alpha.$
+     - if $GOTO(I_i,A)=I_j$, 令GOTO[i,A]=j
+``其余与LR(0)相同``
 
 # LR(1)
 
