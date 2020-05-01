@@ -1,6 +1,7 @@
 
 
 ```bash
+# 开启服务
 cd C:\postgresql-10.9-1-windows-x64-binaries\pgsql\bin
 
 pg_ctl -D data -l logfile start
