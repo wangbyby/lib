@@ -39,11 +39,19 @@ net start mysql
   - ``mysqld -nt --skip-grant-tables`` 跳过安全检查
   - 保持cmd命令窗1打开状态，新开cmd命令窗2
   - ``mysql`` 连接
+  
   - 更新密码 
-    - use mysql;
-    - select user,authentication_string,host from user;
-    - update user set authentication_string = password``('root')`` where user = 'root' and host = 'localhost';
-    - select user,authentication_string,host from user;
-    - flush privileges;
+
+    ```sql
+
+  --sql语句警告
+  use mysql;
+     select user,authentication_string,host from user;
+     update user set authentication_string = password``('root')`` where user = 'root' and host = 'localhost';
+     select user,authentication_string,host from user;
+     flush privileges;  
+    ```
+
 -  You must reset your password using ALTER USER statement before executing this statement.
+
    -  ``alter user user() identified by 'root';``
