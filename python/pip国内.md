@@ -1,4 +1,5 @@
 # linux
+
 * 创建pip.conf文件
 * 首先运行以下命令
         ```bash
@@ -40,3 +41,18 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 trusted-host = https://pypi.tuna.tsinghua.edu.cn
 # trusted-host 此参数是为了避免麻烦，否则使用的时候可能会提示不受信任
 ```
+
+# 错误
+
+
+>Fatal error in launcher: Unable to create process using '"c:\users\13298\anaconda3\python.exe"  "D:\coding_app\Anaconda3\Scripts\pip.exe" ': ???????????
+1. 卸载``python -m pip uninstall pip``
+2. 安装
+   1. ``wget https://bootstrap.pypa.io/get-pip.py``
+   2. ``python get-pip.py``
+
+
+# 依赖
+
+- 导出: ``pip freeze > requirements.txt``
+- 导入: ``pip install -r requirements.txt``

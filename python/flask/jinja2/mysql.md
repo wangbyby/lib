@@ -80,3 +80,10 @@
     db = SQLAlchemy(app)
 
     ```
+
+编码问题
+---
+
+- sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1366, "Incorrect string value: '\\xE7\\x9D\\x80' for column 'body' at row 1") [SQL: 'INSERT INTO posts (body, timestamp, author_uid) VALUES (%(body)s, %(timestamp)s, %(author_uid)s)'] [parameters: {'body': '着', 'timestamp': datetime.datetime(2020, 5, 6, 12, 32, 16, 372088), 'author_uid': 4}]
+  - 不支持中文
+  - ``ALTER TABLE posts CONVERT TO CHARACTER SET utf8mb4;``

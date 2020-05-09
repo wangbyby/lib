@@ -41,11 +41,10 @@ net start mysql
   - ``mysql`` 连接
   
   - 更新密码 
-
+    密码是root一点也不安全.
     ```sql
-
   --sql语句警告
-  use mysql;
+      use mysql;
      select user,authentication_string,host from user;
      update user set authentication_string = password``('root')`` where user = 'root' and host = 'localhost';
      select user,authentication_string,host from user;

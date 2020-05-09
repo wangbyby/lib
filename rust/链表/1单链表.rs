@@ -1,5 +1,7 @@
 use std::mem;
 
+// 最普通的单向链表
+
 pub struct List{
     head: Link,
 }
