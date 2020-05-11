@@ -26,7 +26,7 @@ parser.yy
 
 ```bash
 # Makefile
-#不要瞎按 tab
+#不要瞎按tab
 a.out: gt.ll gt.yy ast.hh
         bison -d gt.yy
         flex -o gt.lex.c gt.ll
