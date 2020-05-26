@@ -116,3 +116,20 @@ graph LR
   - 网络: ![avatar](http://baidu.com/pic/doge.png)
   - ![avatar][base64str] [base64str]:data:image/png;base64,iVBORw0......
 <img src="./aaa.png" >函数调用关系 </img>
+
+
+4. 矩阵
+
+
+$$
+R_z(\theta) =
+\left[
+  \begin{matrix}
+   cos\theta & -sin\theta & 0 & 0 \\
+    sin\theta & cos\theta & 0 & 0\\
+    0 &  0 &   1 & 0\\
+   0 & 0 & 0 & 1\\
+  \end{matrix}
+\right]
+$$
+

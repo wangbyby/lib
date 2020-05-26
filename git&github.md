@@ -1,6 +1,6 @@
 # 解决github每次push输入账号密码
-1. git remote -v 
 
+1. git remote -v 
 2. git remote rm <branch> #删除原先https连接
 3. git remote add <branch> ssh地址 #连接方式更改为SSh
 4. git push <branch>

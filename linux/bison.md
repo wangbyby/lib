@@ -39,3 +39,8 @@ clean:
         rm ./a.out gt.lex.c gt.yy.tab.c gt.yy.tab.h
 ```
 
+
+-  error: redefinition of ‘int yydebug’
+   -  在main.cpp文件里
+   -  ``extern int yydebug;``
+   -  ``yydebug=1;``
