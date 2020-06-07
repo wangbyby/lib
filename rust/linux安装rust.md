@@ -1,0 +1,39 @@
+
+
+```bash
+# import USTC mirror
+echo "export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static" >> ~/.bashrc
+echo "export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup" >> ~/.bashrc
+source .bashrc
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# 安装完毕后刷新环境变量
+source ~/.cargo/env
+
+```
+
+```bash
+# cargo代理
+cat >~/.cargo/config <<EOF
+[source.crates-io]
+replace-with = 'tuna'
+
+[source.tuna]
+registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
+EOF
+
+# 因为代码提示racer的一些#future功能不能在稳定版使用，无法安装
+# 所以安装nightly版本的rust 并设置默认版本
+rustup install nightly
+rustup default nightly
+
+# 安装RLS组建
+rustup component add rls --toolchain nightly
+rustup component add rust-analysis --toolchain nightly
+rustup component add rust-src --toolchain nightly
+
+# 安装racer
+cargo install racer
+
+```
