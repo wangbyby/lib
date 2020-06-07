@@ -1,5 +1,12 @@
 
 # mod test
+- 测试
+  - cargo test -- --nocapture
+  - 单元测试
+    ```
+    #[cfg(test)] //只在cargo test中生效, 不编译在cargo build中
+    ```
+
 ```rust
 #[cfg(test)] //重点
 mod test {
