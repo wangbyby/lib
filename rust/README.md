@@ -105,3 +105,10 @@ cargo install racer
 source ~/.profile
 source ~/.cargo/env
 ```
+
+
+
+# 一些小问题
+
+- 报错没有找到`riscv64imac-unknown-none-elf`和没有`core`
+  - `rustup target add riscv64imac-unknown-none-elf`
