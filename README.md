@@ -138,5 +138,5 @@
 - [吴冠中](http://art.ifeng.com/2015/1102/2585452.shtml)
 
 ## END: 请吃烤冷面
-![微信](https://github.com/wangbyby/free-CS-ebook/blob/master/README.assets/wx.jpg)
-![支付宝](https://github.com/wangbyby/free-CS-ebook/blob/master/README.assets/alipay.png)
+![微信](https://github.com/wangbyby/lib/tree/master/README.assets/wx.jpg)
+![支付宝](https://github.com/wangbyby/lib/tree/master/README.assets/alipay.png)
