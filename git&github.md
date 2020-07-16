@@ -181,3 +181,8 @@ git github
         
 	SSH免密登陆(只能为一个账号)
 		ssh-ketgen -t rsa -C [邮箱]
+
+6. 日志导出
+注意字符集的问题
+`git log --date=iso --pretty=format:'"%h","%an","%ad","%s"' >log.csv`
+

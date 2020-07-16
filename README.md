@@ -2,13 +2,13 @@
 
 # 1. 记录相关报错情况和体会
 
-
+在各个文件夹里面
 
 # 2. Free-CS-ebook
 
 持续更新
 
-整理出相关资源只为购买实体书前预览内容质量，请下载后24小时内删除！若有侵权, 联系删除.
+整理出相关资源只为购买实体书前预览内容质量，请下载后24小时内删除！
 
 ## 1. 如何寻找电子书资源?
 
@@ -16,7 +16,7 @@
 2. 各种电子书下载网站
 3. 谷歌`记得高级搜索`
 4. gitee
-5. 微盘/微博
+5. [微盘](https://vdisk.weibo.com/)
 6. B站
 7. 知乎
 8. 百度
@@ -32,6 +32,11 @@
 - [快搜](https://search.chongbuluo.com/)
 - http://lackar.com/aa/
 - [Magi](https://magi.com/)
+- [SearchCode](https://searchcode.com/): 源代码搜索引擎
+- [Unsplash](https://unsplash.com): 无版权图片... ~~必应也行~~
+- [MySlide](https://myslide.cn/): PPT分享
+- http://www.hippter.com/ PPT
+- https://www.dingdangsheji.com/ PPT模板
 
 **BT, 磁力资源**
 
@@ -42,11 +47,14 @@
 - 好用的
   - Google 记得高级搜索
   - [鸠摩搜书](https://www.jiumodiary.com/)
+  - [b-ok](https://b-ok.asia/) 书很多，可能需要翻墙
   - [熊猫电子书](https://itpanda.net/book/) 
   - [AiBooks](https://www.aibooks.cc/book/biancheng)
+  - [数栈网](https://www.bookstack.cn/) 其实是文档, 也有部分电子书
   - [码农网](http://www.manong5.com/185/1600826/1.html) 书有些少
   - [码农电子书](https://book.mzh.ren/)
-  - [b-ok](https://b-ok.asia/) 可能需要翻墙
+  - www.allitebooks.com
+  - http://www.rejoiceblog.com/
   
 - 垃圾的
   - 某脚本网
@@ -65,6 +73,8 @@
   - [用Rust教你写OS](https://rcore-os.github.io/rCore_tutorial_doc/)
     - 这个是他们的[PPT](https://rcore-os.github.io/rCore_tutorial_doc/os2atc2019/os2atc.html)
   - [OS的FAQ](https://xuyongjiande.gitbooks.io/os-qa/content/index.html)
+  - [uCore-gitbook](https://chyyuu.gitbooks.io/simple_os_book/content/)
+    - [uCore-github](https://github.com/chyyuu/ucorebook_code)
   
 - 函数式
   
@@ -89,6 +99,7 @@
   - [Rust的nightly](https://doc.rust-lang.org/nightly/nomicon/)
   - [Rust Cargo](https://doc.rust-lang.org/cargo/index.html)
   - [Create Your Own Programming Language with Rust ](https://createlang.rs/) 未完工
+  - [Rust写推箱子](https://sokoban.iolivia.me)
   
 - 编译器
 
@@ -138,5 +149,6 @@
 - [吴冠中](http://art.ifeng.com/2015/1102/2585452.shtml)
 
 ## END: 请吃烤冷面
-![微信](https://github.com/wangbyby/free-CS-ebook/blob/master/README.assets/wx.jpg)
-![支付宝](https://github.com/wangbyby/free-CS-ebook/blob/master/README.assets/alipay.png)
+![alipay](README.assets/alipay.png)
+
+![wx](README.assets/wx.jpg)
