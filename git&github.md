@@ -126,19 +126,19 @@ git github
     多条线同时推进工程然后合并主干
     优点: 效率,各分支不相干
     分支操作:  
-        创建:git branch 分支名
-        查看:git branch -v
-        切换:git checkout 分支名
-        合并:
-            1.切换到接受修改的分支上
+        - 创建: `git branch 分支名`
+        - 查看: `git branch -v`
+        - 切换: `git checkout 分支名`
+        - 合并:
+            1. 切换到接受修改的分支上
                 git checkout 分支名1 
-            2.执行merge命令
+            2. 执行merge命令
                 git merge 分支名2
-        解决冲突:
-            1.编辑文件,删除特殊符号
-            2.修改文件
-            3.git add 文件名
-            4.git commit -m "日志" //不需要文件名
+        - 解决冲突:
+            1. 编辑文件,删除特殊符号
+            2. 修改文件
+            3. git add 文件名
+            4. git commit -m "日志" //不需要文件名
 4.Git基本原理 (SHA1)
     1.hash
         加密结果固定
@@ -186,3 +186,7 @@ git github
 注意字符集的问题
 `git log --date=iso --pretty=format:'"%h","%an","%ad","%s"' >log.csv`
 
+7. 错误合计
+
+- 问题: `fatal: refusing to merge unrelated histories`
+    - 解决: `git pull origin master --allow-unrelated-histories`

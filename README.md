@@ -1,8 +1,34 @@
 **面向资料库编程**
 
-# 1. 记录相关报错情况和体会
+# 1. 网站资源
 
-在各个文件夹里面
+**搜索推荐**
+
+- 源代码
+  - github
+  - [SearchCode](https://searchcode.com/): 源代码搜索引擎
+  - gitee
+- 图片
+  - [Unsplash](https://unsplash.com): 无版权图片... ~~必应也行~~
+  - http://www.polayoutu.com/collections 泼辣有图
+  - https://www.hippopx.com/zh/ 基于CC0协议的免版权图库
+
+- PPT
+  - [MySlide](https://myslide.cn/): PPT分享
+  - http://www.hippter.com/ PPT
+  - https://www.dingdangsheji.com/ PPT模板
+  - http://www.bangongziyuan.com/ppt.html PPT
+- 网站导航
+  - http://guozhivip.com/nav/ 网站导航, 看起来多
+  - [快搜](https://search.chongbuluo.com/) 网站导航
+  - http://lackar.com/aa/ 网站导航
+  - [Magi](https://magi.com/) 用起来一般般
+
+- BT磁力资源
+  - https://jubtnet.github.io/jubt/
+- http://www.chenmigongzuo.com/ ~~摸鱼~~好好工作
+- http://www.52sopan.com/ 网盘搜索
+- https://www.similarsites.com 相似网站发现
 
 # 2. Free-CS-ebook
 
@@ -27,34 +53,36 @@
 >
 > 在现实中, 问搜索引擎就完事了
 
-**搜索推荐**
 
-- [快搜](https://search.chongbuluo.com/)
-- http://lackar.com/aa/
-- [Magi](https://magi.com/)
-- [SearchCode](https://searchcode.com/): 源代码搜索引擎
-- [Unsplash](https://unsplash.com): 无版权图片... ~~必应也行~~
-- [MySlide](https://myslide.cn/): PPT分享
-- http://www.hippter.com/ PPT
-- https://www.dingdangsheji.com/ PPT模板
-
-**BT, 磁力资源**
-
-- https://jubtnet.github.io/jubt/
 
 ## 2.电子书下载网站推荐
 
 - 好用的
   - Google 记得高级搜索
+  
   - [鸠摩搜书](https://www.jiumodiary.com/)
-  - [b-ok](https://b-ok.asia/) 书很多，可能需要翻墙
+  
+  - 👍[b-ok](https://b-ok.asia/) 书很多，可能需要翻墙
+  
+  - https://link.springer.com/ 偏重于学术
+  
   - [熊猫电子书](https://itpanda.net/book/) 
+  
   - [AiBooks](https://www.aibooks.cc/book/biancheng)
+  
   - [数栈网](https://www.bookstack.cn/) 其实是文档, 也有部分电子书
+  
   - [码农网](http://www.manong5.com/185/1600826/1.html) 书有些少
+  
   - [码农电子书](https://book.mzh.ren/)
+  
   - www.allitebooks.com
+  
   - http://www.rejoiceblog.com/
+  
+  - https://book.tinynews.org/
+  
+    
   
 - 垃圾的
   - 某脚本网
@@ -62,11 +90,11 @@
 
 以上几个网站, 已经够绝大多数人的需求了.
 
-若想要某些稀缺书籍, 谷歌最舒服. 
+若想要某些稀缺书籍, 谷歌最好. 
 
 
 
-## 3.计算机相关资源
+## 3.计算机相关
 
 - 操作系统
   
@@ -75,6 +103,11 @@
   - [OS的FAQ](https://xuyongjiande.gitbooks.io/os-qa/content/index.html)
   - [uCore-gitbook](https://chyyuu.gitbooks.io/simple_os_book/content/)
     - [uCore-github](https://github.com/chyyuu/ucorebook_code)
+  - C语言写OS+1https://littleosbook.github.io/
+  
+- 数据库
+  
+  - https://cstack.github.io/db_tutorial/ C语言写一个toy sqlite
   
 - 函数式
   
@@ -110,7 +143,12 @@
   
   - [语料库大全](https://liuhuanyong.github.io/)
   
+  - 书:数学之美
+  
     
+  
+    
+  
 
 ## 4.写作软件推荐
 
@@ -140,13 +178,18 @@
 - https://zhuwei.me/y2b/?f=y2b YouTube字幕下载
 - https://www.6pian.cn/zimu.html 牛片智能字幕-srt字幕一键生成-字幕批量制作软件-pr字幕在线制作工具
 
-## 8.音乐下载
+## 8.音乐&电影&动漫
 
-- https://huan-xi.github.io/
+- https://huan-xi.github.io/ 音乐
+- http://135zy0.com/ 电影
+- https://www.cupfox.com/ 电影搜索
+- http://www.zzzfun.com/ 动漫
 
 ## 9. 我最喜欢的画家
 
 - [吴冠中](http://art.ifeng.com/2015/1102/2585452.shtml)
+
+
 
 ## END: 请吃烤冷面
 ![alipay](README.assets/alipay.png)
