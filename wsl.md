@@ -31,3 +31,14 @@ fi
 ```bash
 echo umask 022 >> ~/.vscode-server/server-env-setup
 ```
+
+
+
+
+
+## 安装wsl2
+
+
+
+- [关于使用WSL2出现“参考的对象类型不支持尝试的操作”的解决方法。](https://zhuanlan.zhihu.com/p/151392411)
+- 
