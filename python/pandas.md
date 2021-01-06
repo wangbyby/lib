@@ -4,6 +4,10 @@
 
 
 
+**注意, 修改值的函数都要考虑`inplace`是否为`True`**
+
+
+
 ```python
 l = ['hello', 'wrod', 'hello']
 
@@ -18,7 +22,24 @@ df = pd.DataFrame(map(lambda x: (
 
 ```
 
+# DataFrame去重
 
+```
+df = pd.read_csv(inputfile_path)
+
+# 重复项计数
+df.insert(1, 'counts', 1)
+nodup = df.groupby(columns).count()
+#排序
+nodup.sort_values(by=['current', 'counts'], ascending=False, inplace=True)
+nodup.to_csv(output)
+```
+
+2. 简单的原地去重
+
+```python
+df.drop_duplicates(inplace=True)
+```
 
 
 
@@ -91,6 +112,10 @@ print(df)
 
 ## 排序
 
+
+
+1. series
+
 ```python
 l = [('a', 15), ('b', 20)]
 s = pd.Series(l)
@@ -110,6 +135,14 @@ a     12
 """
 
 print(s)
+```
+
+
+
+2. DataFrame
+
+```python
+df.sort_values(by='col1', ascending=False)
 ```
 
 
@@ -180,4 +213,48 @@ df_stanford.at['123', 'times'] # 行, 列
 ```
 
 
+
+## 转为二维数组
+
+1. 内容转为二维数组
+
+```
+dataSet = pd.read_csv('a.csv')
+print(dataSet.values.tolist())
+```
+
+2. 获取表头
+
+```
+print(dataSet.columns.values.tolist())
+```
+
+
+
+### fillna
+
+
+
+```python
+#python代码
+df = pd.read_csv('a.csv')
+# fillna
+df.fillna(value=1, inplace=True)
+print(df)
+
+#结果如下
+"""
+     1    2  3   4
+0  5.0  6.0  7   8
+1  1.0  1.0  9  10
+"""
+```
+
+**a.csv**
+
+```txt
+1,2,3,4
+5,6,7,8
+,,9,10
+```
 
