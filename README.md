@@ -29,6 +29,7 @@
 - http://www.chenmigongzuo.com/ ~~摸鱼~~好好工作
 - http://www.52sopan.com/ 网盘搜索
 - https://www.similarsites.com 相似网站发现
+- https://jubt.cf/cn/index.html 资源聚合!
 
 # 2. Free-CS-ebook
 
