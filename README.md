@@ -32,6 +32,7 @@
 - http://www.chenmigongzuo.com/ ~~摸鱼~~好好工作
 - http://www.52sopan.com/ 网盘搜索
 - https://www.similarsites.com 相似网站发现
+- https://jubt.cf/cn/index.html 资源聚合!
 
 # 2. Free-CS-ebook
 
@@ -123,23 +124,25 @@
   - [👍常见的生命周期误解](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md#2-if-t-static-then-t-must-be-valid-for-the-entire-program)
   - [👍Rust简报](https://rustmagazine.github.io/rust_magazine_2021/)备用:https://www.yuque.com/chaosbot/rust_magazine_2021
   - [👍Rust基本概念](https://cheats.rs/)
+  - [async-std中文文档](https://learnku.com/docs/rust-async-std)
   - [GitHub 上的一个 Rust 图书列表](https://learnku.com/rust/t/45089)
+  - [书籍2](https://zhuanlan.zhihu.com/p/131087074)
   - [too many list](https://rust-unofficial.github.io/too-many-lists/)  很适合初学者
   - [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
   - [Rust宏小册 中文版](http://blog.luxko.site/tlborm-chinese/book/index.html)
   - [safe与unsafe](https://doc.rust-lang.org/nomicon/meet-safe-and-unsafe.html)
   - [Rust高级编程](https://learnku.com/docs/nomicon/2018)
   - [Command Line Applications in Rust](https://rust-cli.github.io/book/index.html)
-  - [async-std中文文档](https://learnku.com/docs/rust-async-std)
   - [Rust的nightly](https://doc.rust-lang.org/nightly/nomicon/)
   - [Rust Cargo](https://doc.rust-lang.org/cargo/index.html)
-  - [Create Your Own Programming Language with Rust ](https://createlang.rs/) 未完工
   - [Rust写推箱子](https://sokoban.iolivia.me)
   
 - 编译器
-
+  - [rustc编译器开发指导](https://rustc-dev-guide.rust-lang.org/index.html)
+  - [Create Your Own Programming Language with Rust ](https://createlang.rs/) 未完工
   - [decaf](https://decaf-project.gitbook.io/decaf-2019/overview)
     - [实验](https://mashplant.gitbook.io/decaf-doc/)
+
 
 - 自然语言处理
   
