@@ -4,6 +4,9 @@
 
 **搜索推荐**
 
+- 搜索集成
+  - 🤐[聚搜索](https://jubt.cf/cn/index.html)
+
 - 源代码
   - github
   - [SearchCode](https://searchcode.com/): 源代码搜索引擎
@@ -54,19 +57,14 @@
 > 在现实中, 问搜索引擎就完事了
 
 
-
 ## 2.电子书下载网站推荐
 
-- 好用的
-  - Google 记得高级搜索
-  
-  - [鸠摩搜书](https://www.jiumodiary.com/)
-  
+- 好用的✔
+  - Google高级搜索
+
   - 👍[b-ok](https://b-ok.asia/) 书很多，可能需要翻墙
   
   - https://link.springer.com/ 偏重于学术
-  
-  - [熊猫电子书](https://itpanda.net/book/) 
   
   - [AiBooks](https://www.aibooks.cc/book/biancheng)
   
@@ -82,8 +80,9 @@
   
   - https://book.tinynews.org/
   
-    
-  
+- 不好用❌
+  - [鸠摩搜书](https://www.jiumodiary.com/) 现在需要微信扫码了
+  - [熊猫电子书](https://itpanda.net/book/) 转移到qq群啦 
 - 垃圾的
   - 某脚本网
   - 某些网盘搜索
@@ -98,11 +97,12 @@
 
 - 操作系统
   
-  - [用Rust教你写OS](https://rcore-os.github.io/rCore_tutorial_doc/)
+  - [👍用Rust教你写OS](https://rcore-os.github.io/rCore_tutorial_doc/)
     - 这个是他们的[PPT](https://rcore-os.github.io/rCore_tutorial_doc/os2atc2019/os2atc.html)
-  - [OS的FAQ](https://xuyongjiande.gitbooks.io/os-qa/content/index.html)
-  - [uCore-gitbook](https://chyyuu.gitbooks.io/simple_os_book/content/)
+  - [👍OS的FAQ](https://xuyongjiande.gitbooks.io/os-qa/content/index.html)
+  - [👍uCore-gitbook](https://chyyuu.gitbooks.io/simple_os_book/content/)
     - [uCore-github](https://github.com/chyyuu/ucorebook_code)
+  - [👍高级的zCore](https://rcore-os.github.io/zCore-Tutorial/)
   - C语言写OS+1https://littleosbook.github.io/
   
 - 数据库
@@ -120,7 +120,9 @@
     - https://sdgmf.github.io/post/goproject/
   
 - Rust语言相关
-
+  - [👍常见的生命周期误解](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md#2-if-t-static-then-t-must-be-valid-for-the-entire-program)
+  - [👍Rust简报](https://rustmagazine.github.io/rust_magazine_2021/)备用:https://www.yuque.com/chaosbot/rust_magazine_2021
+  - [👍Rust基本概念](https://cheats.rs/)
   - [GitHub 上的一个 Rust 图书列表](https://learnku.com/rust/t/45089)
   - [too many list](https://rust-unofficial.github.io/too-many-lists/)  很适合初学者
   - [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
@@ -144,11 +146,7 @@
   - [语料库大全](https://liuhuanyong.github.io/)
   
   - 书:数学之美
-  
-    
-  
-    
-  
+
 
 ## 4.写作软件推荐
 
