@@ -4,8 +4,8 @@
 
 **搜索推荐**
 
-;搜索集成
-  ;🤐[聚搜索](https://jubt.cf/cn/index.html)
+
+  <!--🤐[聚搜索](https://jubt.cf/cn/index.html)-->
 
 - 源代码
   - github
