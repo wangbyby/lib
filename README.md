@@ -4,8 +4,8 @@
 
 **搜索推荐**
 
-- 搜索集成
-  - 🤐[聚搜索](https://jubt.cf/cn/index.html)
+
+  <!--🤐[聚搜索](https://jubt.cf/cn/index.html)-->
 
 - 源代码
   - github
@@ -105,7 +105,9 @@
     - [uCore-github](https://github.com/chyyuu/ucorebook_code)
   - [👍高级的zCore](https://rcore-os.github.io/zCore-Tutorial/)
   - C语言写OS+1https://littleosbook.github.io/
-  
+  - 比清华的rCore弱一些https://intermezzos.github.io/
+  - 待探索https://github.com/theseus-os/Theseus
+ 
 - 数据库
   
   - https://cstack.github.io/db_tutorial/ C语言写一个toy sqlite
@@ -139,7 +141,7 @@
   
 - 编译器
   - [rustc编译器开发指导](https://rustc-dev-guide.rust-lang.org/index.html)
-  - [Create Your Own Programming Language with Rust ](https://createlang.rs/) 未完工
+  - 🛠[Create Your Own Programming Language with Rust ](https://createlang.rs/)
   - [decaf](https://decaf-project.gitbook.io/decaf-2019/overview)
     - [实验](https://mashplant.gitbook.io/decaf-doc/)
 
