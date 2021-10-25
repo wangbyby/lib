@@ -27,5 +27,12 @@ kill -9 `ps -ef |grep PID|awk '{print $2}' `
 - 找大小超过10m文件
 `find /dir -size +10M`
 
+- 查找文件
+`find /dir -name test*`
+
+- 查找文件内容
+`grep -r wby /home/wby`
+
 - 打印xx文件第100行
 `sed -n '1,1p' test_email.py`
+
