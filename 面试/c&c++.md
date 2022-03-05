@@ -29,9 +29,17 @@ const: 成员函数不改变class object的值
 ```c++
 int length() const {return len;}
 ```
-
-
 mutable: 对变量的改变不会破坏class object的常量性
 
 - this 指针
 成员函数中指向其调用者
+
+
+#　stl
+
+- 容器 vec,list,map,set
+- 算法
+- 迭代器
+- 内存分配器
+- 适配器
+- 函数对象: 重载了operator()的对象 
