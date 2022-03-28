@@ -35,18 +35,40 @@
 
 ## String处理
 
-1. 两个String拼接
+1. 两个String &str拼接
+- +
+```rust
+let a = "hi ".to_string();
+let b = "jack".to_string();
+assert_eq!(a+b, "hi jack");
+```
+- format!() {} {:?}
+```rust
+let a = "hi".to_string();
+let b = "jack".to_string();
+assert_eq!(format!("{} {}",a,b), "hi jack");
+assert_eq!(format!("{:?} {:?}",a,b), "\"hi\" \"jack\"");
+```
+- push_str
 
-2. concat与join
+
+- concat与join
 ``concat是直接合并``
 ``join是中间插入项``
 
 ```rust
+// concat in array
 let a1 = vec!["1","2","3","4"];
 let res1 = a1.concat();
+assert_eq!(res1,"1234");
 
-let a2 = vec!["1","world"];
-let res2 = a2.join("the ");
+// concat!
+assert_eq!("hello world", concat!("hello ", "world"));
+
+// join in array
+let a2 = vec!["hello","world"];
+let res2 = a2.join(" ");
+assert_eq!(res2, "hello world");
 ```
 
 
